@@ -19,6 +19,18 @@
     "dayjs",
     "date-picker"
   ],
+  "homepage": "https://github.com/gattacx/react-datepicker",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gattacx/react-datepicker"
+  },
+  "contributors": [
+    ""
+  ],
+  "bugs": {
+    "url": "https://github.com/gattacx/react-datepicker/issues",
+    "email": "voytenko@aol.com"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
