@@ -6,7 +6,7 @@ import * as path from 'node:path';
 export default defineConfig({
   build: {
     lib: {
-      entry: path.resolve(__dirname, 'src/lib/index.ts'),
+      entry: path.resolve(__dirname, 'src/index.ts'),
       name: '@voytenkodev/react-datepicker',
       fileName: (format) => `index.${format}.js`,
     },
