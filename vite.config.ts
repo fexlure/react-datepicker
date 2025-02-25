@@ -1,17 +1,21 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import dts from 'vite-plugin-dts';
-import * as path from 'node:path';
+import path from 'path';
 
 export default defineConfig({
+  plugins: [
+    react(),
+    dts({ insertTypesEntry: true }), // Генерация .d.ts файлов
+  ],
   build: {
     lib: {
-      entry: path.resolve(__dirname, 'src/index.ts'),
-      name: '@voytenkodev/react-datepicker',
-      fileName: (format) => `index.${format}.js`,
+      entry: path.resolve(__dirname, 'src/index.ts'), // Точка входа
+      name: 'ReactDatePicker', // Имя библиотеки
+      fileName: (format) => `react-datepicker.${format}.js`, // Имя выходного файла
     },
     rollupOptions: {
-      external: ['react', 'react-dom'],
+      external: ['react', 'react-dom'], // Внешние зависимости
       output: {
         globals: {
           react: 'React',
@@ -19,8 +23,5 @@ export default defineConfig({
         },
       },
     },
-    sourcemap: true,
-    emptyOutDir: true,
   },
-  plugins: [react(), dts()],
 });

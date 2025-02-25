@@ -4,9 +4,9 @@
   "private": false,
   "version": "0.0.9",
   "license": "MIT",
-  "main": "/dist/react-datepicker.umd.js",
-  "module": "/dist/react-datepicker.es.js",
-  "types": "/dist/index.d.ts",
+  "main": "./dist/react-datepicker.umd.js",
+  "module": "./dist/react-datepicker.es.js",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
@@ -18,10 +18,6 @@
       "import": "./dist/index.es.js",
       "require": "./dist/index.umd.js",
       "types": "./dist/index.d.ts"
-    },
-    "./dist/style.css": {
-      "import": "./dist/style.css",
-      "require": "./dist/style.css"
     }
   },
   "keywords": [
