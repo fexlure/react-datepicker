@@ -12,6 +12,10 @@ dist
 dist-ssr
 *.local
 
+src/App.tsx
+src/main.tsx
+index.html
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
