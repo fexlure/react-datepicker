@@ -56,7 +56,7 @@ function App() {
 
 Property                | type          | Values             | Description                                              
 ------------------------|---------------|--------------------|----------------------------------------------------------
-locale                  | string        | "en", "ru"         | Changed language and day of started week. Default: en    
+locale                  | string        | "en", "ru", "fr"   | Changed language and day of started week. Default: en    
 type                    | String        | "month", "full"    | Type of returned date (when type of month, days is not show) 
 onChange*               | Date          | any date           | Returned date or null (if reset)                   
 value*                  | Date          | any date           | undefined               | Show date or placeholder                                 
