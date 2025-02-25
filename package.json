@@ -2,16 +2,27 @@
   "name": "@voytenkodev/react-datepicker",
   "description": "Datepicker on react",
   "private": false,
-  "version": "0.0.8",
+  "version": "0.0.9",
   "license": "MIT",
-  "main": "./dist/react-datepicker.umd.js",
-  "module": "./dist/react-datepicker.esm.js",
-  "types": "./dist/index.d.ts",
+  "main": "/dist/react-datepicker.umd.js",
+  "module": "/dist/react-datepicker.es.js",
+  "types": "/dist/index.d.ts",
   "files": [
     "dist"
   ],
   "publishConfig": {
     "access": "public"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.umd.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./dist/style.css": {
+      "import": "./dist/style.css",
+      "require": "./dist/style.css"
+    }
   },
   "keywords": [
     "react",
@@ -40,7 +51,8 @@
   },
   "dependencies": {
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "vite-plugin-dts": "^4.5.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",
@@ -55,7 +67,6 @@
     "prettier": "^3.5.2",
     "typescript": "~5.7.2",
     "typescript-eslint": "^8.24.1",
-    "vite": "^6.2.0",
-    "vite-plugin-dts": "^4.5.0"
+    "vite": "^6.2.0"
   }
 }
