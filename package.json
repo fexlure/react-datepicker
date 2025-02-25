@@ -2,7 +2,7 @@
   "name": "@voytenkodev/react-datepicker",
   "description": "Datepicker on react",
   "private": false,
-  "version": "0.0.9",
+  "version": "0.0.10",
   "license": "MIT",
   "main": "./dist/react-datepicker.umd.js",
   "module": "./dist/react-datepicker.es.js",
@@ -12,13 +12,6 @@
   ],
   "publishConfig": {
     "access": "public"
-  },
-  "exports": {
-    ".": {
-      "import": "./dist/index.es.js",
-      "require": "./dist/index.umd.js",
-      "types": "./dist/index.d.ts"
-    }
   },
   "keywords": [
     "react",
