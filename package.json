@@ -1,5 +1,6 @@
 {
-  "name": "@gattacx/react-datepicker",
+  "name": "react-datepicker",
+  "description": "Datepicker on react",
   "private": false,
   "version": "0.0.1",
   "license": "MIT",
@@ -19,6 +20,7 @@
     "dayjs",
     "date-picker"
   ],
+  "author": "Bogdan Voitenko <gattacx@yandex.ru> @gattacx",
   "homepage": "https://github.com/gattacx/react-datepicker",
   "repository": {
     "type": "git",
