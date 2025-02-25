@@ -1,31 +1,28 @@
 # React DatePicker
 
-### Simple datepicker on React + dayjs
+### Simple datepicker on React
 
 ![](https://i.ibb.co/wLKhJRC/tg-image-2248843087.jpg)
 
 
 ## Installation
 ```
-npm install react-datepicker-dayjs
-npm install dayjs
+npm install @voytenkodev/react-datepicker
 ```
 Or via yarn:
 
 ```
-yarn add react-datepicker-dayjs
-yarn add dayjs
+yarn add @voytenkodev/react-datepicker
 ```
 
 ```js
 import { useState } from 'react'
-import { CalendarPicker } from 'react-datepicker-dayjs'
+import { CalendarPicker } from '@voytenkodev/react-datepicker'
 // if need a default styles
-import 'react-datepicker-dayjs/dist/style.css'
+import '@voytenkodev/react-datepicker/dist/style.css'
 
 function App() {
-    // dayjs default return is string format
-	const [date, setDate] = useState<string>()
+	const [date, setDate] = useState<Date>()
 	
 	return (
 		<CalendarPicker value={date} onChange={setDate} />
@@ -35,10 +32,10 @@ function App() {
 
 Use with react-hook-form
 ```js
-import { CalendarPicker } from 'react-datepicker-dayjs'
+import { CalendarPicker } from 'react-datepicker'
 import { useFormContext, Controller } from 'react-hook-form'
 // if need a default styles
-import 'react-datepicker-dayjs/dist/style.css'
+import '@voytenkodev/react-datepicker/dist/style.css'
 
 function App() {
         const { control } = useFormContext()
