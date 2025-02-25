@@ -19,10 +19,10 @@ yarn add @voytenkodev/react-datepicker
 import { useState } from 'react'
 import { CalendarPicker } from '@voytenkodev/react-datepicker'
 // if need a default styles
-import '@voytenkodev/react-datepicker/dist/style.css'
+import '@voytenkodev/react-datepicker/dist/react-datepicker.css'
 
 function App() {
-	const [date, setDate] = useState<Date>()
+	const [date, setDate] = useState<Date>();
 	
 	return (
 		<CalendarPicker value={date} onChange={setDate} />
@@ -35,7 +35,7 @@ Use with react-hook-form
 import { CalendarPicker } from 'react-datepicker'
 import { useFormContext, Controller } from 'react-hook-form'
 // if need a default styles
-import '@voytenkodev/react-datepicker/dist/style.css'
+import '@voytenkodev/react-datepicker/dist/react-datepicker.css'
 
 function App() {
         const { control } = useFormContext()
@@ -54,19 +54,18 @@ function App() {
 }
 ```
 
-Property                | type          | Values                          | Description                                                                                
-------------------------|---------------|---------------------------------|--------------------------------------------------------------------------------------------
-locale                  | string        | "en", "ru"                      | Changed language and day of started week. Default: en                                                                     
-type                    | String        | "date", "full"                  | Type of returned date (when type of month, days is not show)                                                                   
-onChange*               | string        | '1994-09-05'                    | Returned date or null (if reset)                   
-value*                  | string        | '1994-09-05'                    | Show date or placeholder                                                               
-returnedFormat          | string        | "YYYY.MM.DD", "MM.YYYY" and etc | Returned format of value, default: 'YYYY-MM-DD'
-placeholder             | string        | any string                      | default placeholder it's returnedFormat   
-globalStyles            | CSSProperties | any styles                      | Styles for global container                                                       
-calendarStyles          | CSSProperties | any styles                      | Styles for calendar container                                                                        
-mainColor               | string        | any color                       | Color is active date. Default: #2F8DB3                                                 
-min                     | string        | none, "2024-04-12"              | Min date for select. Default: none
-max                     | string        | none, "2024-05-12"              | Max date for select. Default: none
+Property                | type          | Values             | Description                                              
+------------------------|---------------|--------------------|----------------------------------------------------------
+locale                  | string        | "en", "ru"         | Changed language and day of started week. Default: en    
+type                    | String        | "month", "full"    | Type of returned date (when type of month, days is not show) 
+onChange*               | Date          | any date           | Returned date or null (if reset)                   
+value*                  | Date          | any date           | undefined               | Show date or placeholder                                 
+placeholder             | string        | any string         | default placeholder it's returnedFormat                  
+globalStyles            | CSSProperties | any styles         | Styles for global container                              
+calendarStyles          | CSSProperties | any styles         | Styles for calendar container                            
+mainColor               | string        | any color          | Color is active date. Default: #2F8DB3                   
+min                     | string        | none, "2024-04-12" | Min date for select. Default: none                       
+max                     | string        | none, "2024-05-12" | Max date for select. Default: none                       
 
 ### Todos
 
