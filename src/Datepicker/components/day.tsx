@@ -30,7 +30,7 @@ export const Day = (props: IDay) => {
         returnedDate(selectedYear, selectedMonth - 1, item, 'unix'),
       );
       const maxDate = new Date(max).getTime() / 1000;
-      return selectedDate < maxDate;
+      return selectedDate > maxDate;
     }
   }, [selectedYear, selectedMonth]);
   const date = useMemo(() => {
