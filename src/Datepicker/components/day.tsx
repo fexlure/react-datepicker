@@ -33,6 +33,11 @@ export const Day = (props: IDay) => {
       return selectedDate < maxDate;
     }
   }, [selectedYear, selectedMonth]);
+  const date = useMemo(() => {
+    if (value) {
+      return typeof value === 'object' ? value : new Date(value);
+    }
+  }, [value]);
   return (
     <button
       type={'button'}
@@ -41,8 +46,8 @@ export const Day = (props: IDay) => {
       value={item}
       style={{
         background:
-          value &&
-          value.toLocaleDateString() ===
+          date &&
+          date.toLocaleDateString() ===
             new Date(selectedYear, selectedMonth - 1, item).toLocaleDateString()
             ? mainColor
             : new Date(
@@ -58,8 +63,8 @@ export const Day = (props: IDay) => {
               ? '#D8DDED'
               : 'none',
         color:
-          value &&
-          value.toLocaleDateString() ===
+          date &&
+          date.toLocaleDateString() ===
             new Date(selectedYear, selectedMonth - 1, item).toLocaleDateString()
             ? 'white'
             : '#2E2E36',
