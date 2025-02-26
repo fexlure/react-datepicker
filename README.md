@@ -19,7 +19,7 @@ yarn add @voytenkodev/react-datepicker
 import { useState } from 'react'
 import { CalendarPicker } from '@voytenkodev/react-datepicker'
 // if need a default styles
-import '@voytenkodev/react-datepicker/dist/react-datepicker.css'
+import '@voytenkodev/react-datepicker/dist/style.css'
 
 function App() {
 	const [date, setDate] = useState<Date>();
@@ -35,7 +35,7 @@ Use with react-hook-form
 import { CalendarPicker } from 'react-datepicker'
 import { useFormContext, Controller } from 'react-hook-form'
 // if need a default styles
-import '@voytenkodev/react-datepicker/dist/react-datepicker.css'
+import '@voytenkodev/react-datepicker/dist/style.css'
 
 function App() {
         const { control } = useFormContext()

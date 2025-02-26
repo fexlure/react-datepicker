@@ -5,7 +5,7 @@ type TCalendarType = 'full' | 'month';
 export type LangJSON = Record<string, string>;
 export type TVisibleCalendar = null | 'days' | 'months' | 'years';
 export interface IDatePicker {
-  value?: Date | string;
+  value?: Date & string;
   onChange: Dispatch<SetStateAction<Date | string | undefined>>;
   locale?: TLang;
   type?: TCalendarType;
@@ -47,7 +47,7 @@ export interface IDays {
   showYears(): void;
   selectedYear: number;
   showMonths(): void;
-  value?: Date | string;
+  value?: Date & string;
   displayData: Array<number>;
   min?: string;
   max?: string;
@@ -56,7 +56,7 @@ export interface IDays {
 export interface IDay {
   selectDay: (day: number) => void;
   item: number;
-  value?: Date | string;
+  value?: Date & string;
   selectedYear: number;
   selectedMonth: number;
   mainColor: string;
