@@ -2,7 +2,7 @@
   "name": "@voytenkodev/react-datepicker",
   "description": "Datepicker on react",
   "private": false,
-  "version": "0.0.10",
+  "version": "0.0.16",
   "license": "MIT",
   "main": "./dist/react-datepicker.umd.js",
   "module": "./dist/react-datepicker.es.js",
@@ -23,7 +23,7 @@
   "homepage": "https://github.com/gattacx/react-datepicker",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gattacx/react-datepicker"
+    "url": "git+https://github.com/gattacx/react-datepicker.git"
   },
   "contributors": [
     ""
@@ -39,15 +39,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "react": "18.2.0",
+    "react-dom": "^18.2.0",
     "vite-plugin-dts": "^4.5.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",
     "@types/node": "^22.13.5",
-    "@types/react": "^19.0.10",
-    "@types/react-dom": "^19.0.4",
+    "@types/react": "18.2.15",
+    "@types/react-dom": "18.2.7",
     "@vitejs/plugin-react": "^4.3.4",
     "eslint": "^9.21.0",
     "eslint-plugin-react-hooks": "^5.0.0",

@@ -29,8 +29,9 @@ const Datepicker = (props: IDatePicker) => {
 
   useEffect(() => {
     if (value) {
-      const month = value.getMonth() + 1;
-      const year = value.getFullYear();
+      const date = typeof value === 'object' ? value : new Date(value);
+      const month = date.getMonth() + 1;
+      const year = date.getFullYear();
       setSelectedYear(year);
       setSelectedMonth(month);
     }
