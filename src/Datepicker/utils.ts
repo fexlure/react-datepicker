@@ -77,14 +77,18 @@ export function dateToShowFormat(
   showFormat: string,
   date: Date | string,
 ): string {
-  const newDate = typeof date === 'object' ? date : new Date(date);
-  const day = String(newDate.getDate()).padStart(2, '0');
-  const month = String(newDate.getMonth() + 1).padStart(2, '0');
-  const year = String(newDate.getFullYear());
-  const shortYear = year.slice(2);
-  return showFormat
-    .replace('DD', day)
-    .replace('MM', month)
-    .replace('YYYY', year)
-    .replace('YY', shortYear);
+  if (date) {
+    const newDate = typeof date === 'object' ? date : new Date(date);
+    const day = String(newDate.getDate()).padStart(2, '0');
+    const month = String(newDate.getMonth() + 1).padStart(2, '0');
+    const year = String(newDate.getFullYear());
+    const shortYear = year.slice(2);
+    return showFormat
+      .replace('DD', day)
+      .replace('MM', month)
+      .replace('YYYY', year)
+      .replace('YY', shortYear);
+  } else {
+    return showFormat;
+  }
 }
