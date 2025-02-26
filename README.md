@@ -54,18 +54,19 @@ function App() {
 }
 ```
 
-Property                | type          | Values             | Description                                              
-------------------------|---------------|--------------------|----------------------------------------------------------
-locale                  | string        | "en", "ru", "fr"   | Changed language and day of started week. Default: en    
-type                    | String        | "month", "full"    | Type of returned date (when type of month, days is not show) 
-onChange*               | Date          | any date           | Returned date or null (if reset)                   
-value*                  | Date          | any date           | undefined               | Show date or placeholder                                 
-placeholder             | string        | any string         | default placeholder it's returnedFormat                  
-globalStyles            | CSSProperties | any styles         | Styles for global container                              
-calendarStyles          | CSSProperties | any styles         | Styles for calendar container                            
-mainColor               | string        | any color          | Color is active date. Default: #2F8DB3                   
-min                     | string        | none, "2024-04-12" | Min date for select. Default: none                       
-max                     | string        | none, "2024-05-12" | Max date for select. Default: none                       
+Property                | type          | Values                 | Description                                              
+------------------------|---------------|------------------------|----------------------------------------------------------
+locale                  | string        | "en", "ru", "fr"       | Changed language and day of started week. Default: en    
+type                    | String        | "month", "full"        | Type of returned date (when type of month, days is not show) 
+onChange*               | Date          | any date               | Returned date or null (if reset)   
+showFormat              | string        | DD.MM.YYYY, YYYY/MM/DD | Show format in calendar, but returned anyway date         
+value*                  | Date          | any date               | undefined               | Show date or placeholder                                 
+placeholder             | string        | any string             | default placeholder it's returnedFormat                  
+globalStyles            | CSSProperties | any styles             | Styles for global container                              
+calendarStyles          | CSSProperties | any styles             | Styles for calendar container                            
+mainColor               | string        | any color              | Color is active date. Default: #2F8DB3                   
+min                     | string        | none, "2024-04-12"     | Min date for select. Default: none                       
+max                     | string        | none, "2024-05-12"     | Max date for select. Default: none                       
 
 ### Todos
 
