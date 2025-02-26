@@ -56,7 +56,7 @@ export interface IDays {
 export interface IDay {
   selectDay: (day: number) => void;
   item: number;
-  value?: Date;
+  value?: Date | string;
   selectedYear: number;
   selectedMonth: number;
   mainColor: string;
