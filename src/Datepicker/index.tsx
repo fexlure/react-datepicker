@@ -19,7 +19,7 @@ const Datepicker = (props: IDatePicker) => {
     min,
     onChange,
     type = 'full',
-    showFormat = 'DD/MM/YYYY',
+    showFormat = type === 'full' ? 'DD/MM/YYYY' : 'MM/YYYY',
     placeholder = showFormat,
     mainColor = '#2F8DB3',
   } = props;
