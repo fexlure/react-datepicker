@@ -2,7 +2,7 @@
   "name": "@voytenkodev/react-datepicker",
   "description": "Datepicker on react",
   "private": false,
-  "version": "1.0.1",
+  "version": "1.0.2",
   "license": "MIT",
   "main": "./dist/react-datepicker.umd.js",
   "module": "./dist/react-datepicker.es.js",
@@ -48,14 +48,14 @@
     "@types/node": "^22.13.5",
     "@types/react": "18.2.15",
     "@types/react-dom": "18.2.7",
-    "@vitejs/plugin-react": "^4.3.4",
+    "@vitejs/plugin-react": "^4.0.3",
     "eslint": "^9.21.0",
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.19",
     "globals": "^15.15.0",
     "prettier": "^3.5.2",
-    "typescript": "~5.7.2",
+    "typescript": "5.2.2",
     "typescript-eslint": "^8.24.1",
-    "vite": "^6.2.0"
+    "vite": "^4.4.5"
   }
 }
