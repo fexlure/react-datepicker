@@ -67,7 +67,17 @@ const Datepicker = (props: IDatePicker) => {
   useOnClickOutside(calendarRef, closeCalendar);
   function selectToday() {
     const date = new Date();
-    onChange(date);
+    if (min) {
+      if (date > new Date(min)) {
+        onChange(date);
+      }
+    } else if (max) {
+      if (date < new Date(max)) {
+        onChange(date);
+      }
+    } else {
+      onChange(date);
+    }
   }
   function resetDate() {
     onChange(undefined);
