@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file.
 
 
+## 1.0.4
+
+### Added
+- Add prop "showResetButton"
+- Add prop "alwaysVisible" 
+
 ## 1.0.3
 
 ### Added 

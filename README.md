@@ -67,6 +67,8 @@ calendarStyles          | CSSProperties | any styles             | Styles for ca
 mainColor               | string        | any color              | Color is active date. Default: #2F8DB3                   
 min                     | string        | none, "2024-04-12"     | Min date for select. Default: none                       
 max                     | string        | none, "2024-05-12"     | Max date for select. Default: none                       
+showResetButton         | boolean       | true/false             | Hide button "Reset". Default: false                       
+alwaysVisible           | boolean       | true/false             | Show callendar all time. Default: false                       
 
 ### Todos
 

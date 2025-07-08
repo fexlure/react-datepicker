@@ -2,7 +2,7 @@
   "name": "@voytenkodev/react-datepicker",
   "description": "Datepicker on react",
   "private": false,
-  "version": "1.0.3",
+  "version": "1.0.4",
   "license": "MIT",
   "main": "./dist/react-datepicker.umd.js",
   "module": "./dist/react-datepicker.es.js",

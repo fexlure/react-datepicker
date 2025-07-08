@@ -22,6 +22,8 @@ const Datepicker = (props: IDatePicker) => {
     showFormat = type === 'full' ? 'DD/MM/YYYY' : 'MM/YYYY',
     placeholder = showFormat,
     mainColor = '#2F8DB3',
+    hideResetButton,
+    alwaysOpened,
   } = props;
   const [selectedMonth, setSelectedMonth] = useState<number>(currentDate.month);
   const [selectedYear, setSelectedYear] = useState<number>(currentDate.year);
@@ -36,8 +38,9 @@ const Datepicker = (props: IDatePicker) => {
       setSelectedMonth(month);
     }
   }, [value]);
-  const [visibleCalendar, setVisibleCalendar] =
-    useState<TVisibleCalendar>(null);
+  const [visibleCalendar, setVisibleCalendar] = useState<TVisibleCalendar>(
+    alwaysOpened ? 'days' : null,
+  );
   const displayData = useMemo(() => {
     return calendar(selectedMonth, selectedYear);
   }, [selectedMonth, selectedYear]);
@@ -46,14 +49,17 @@ const Datepicker = (props: IDatePicker) => {
   const label = useMemo(() => {
     return value ? dateToShowFormat(showFormat, value) : placeholder;
   }, [placeholder, value]);
-  const changeVisible = () =>
-    setVisibleCalendar((prevState) => {
-      if (!prevState) {
-        return type === 'month' ? 'months' : 'days';
-      } else {
-        return null;
-      }
-    });
+  const changeVisible = () => {
+    if (!alwaysOpened) {
+      setVisibleCalendar((prevState) => {
+        if (!prevState) {
+          return type === 'month' ? 'months' : 'days';
+        } else {
+          return null;
+        }
+      });
+    }
+  };
   const selectDay = (
     day: number,
     year: number = selectedYear,
@@ -61,10 +67,14 @@ const Datepicker = (props: IDatePicker) => {
   ) => {
     const selected = new Date(year, month, day);
     onChange(selected);
-    setVisibleCalendar(null);
+    if (!alwaysOpened) setVisibleCalendar(null);
   };
-  const closeCalendar = () => setVisibleCalendar(null);
-  useOnClickOutside(calendarRef, closeCalendar);
+  const closeCalendar = () => {
+    if (!alwaysOpened) {
+      setVisibleCalendar(null);
+    }
+  };
+  useOnClickOutside(calendarRef, closeCalendar, alwaysOpened);
   function selectToday() {
     const date = new Date();
     if (min) {
@@ -150,25 +160,36 @@ const Datepicker = (props: IDatePicker) => {
     <div
       className={'calendar-container'}
       ref={calendarRef}
-      style={{ ...globalStyles }}
+      style={{
+        ...globalStyles,
+        background: alwaysOpened ? 'none' : '#edf2f7',
+        height: alwaysOpened ? 0 : '#edf2f7',
+        padding: alwaysOpened ? 0 : '10px 12px',
+      }}
     >
-      <div onClick={changeVisible} className={'panel-container'}>
-        <label style={{ color: value ? '#2E2E36' : '#7E7E7E' }}>
-          {String(label)}
-        </label>
-        <img src={calendarSvg} alt={'calendar'} />
-      </div>
+      {!alwaysOpened && (
+        <div onClick={changeVisible} className={'panel-container'}>
+          <label style={{ color: value ? '#2E2E36' : '#7E7E7E' }}>
+            {String(label)}
+          </label>
+          <img src={calendarSvg} alt={'calendar'} />
+        </div>
+      )}
       {visibleCalendar && (
         <div className={'data-container'} style={{ ...calendarStyles }}>
           <CurrentShow />
           <div className={'action-buttons'}>
-            <button
-              onClick={resetDate}
-              type={'button'}
-              style={{ color: mainColor }}
-            >
-              {t('reset')}
-            </button>
+            {hideResetButton ? (
+              <span></span>
+            ) : (
+              <button
+                onClick={resetDate}
+                type={'button'}
+                style={{ color: mainColor }}
+              >
+                {t('reset')}
+              </button>
+            )}
             <button
               onClick={selectToday}
               type={'button'}
