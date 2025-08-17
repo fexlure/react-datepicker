@@ -161,10 +161,10 @@ const Datepicker = (props: IDatePicker) => {
       className={'calendar-container'}
       ref={calendarRef}
       style={{
-        ...globalStyles,
         background: alwaysOpened ? 'none' : '#edf2f7',
         height: alwaysOpened ? 0 : '#edf2f7',
         padding: alwaysOpened ? 0 : '10px 12px',
+        ...globalStyles,
       }}
     >
       {!alwaysOpened && (
