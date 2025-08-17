@@ -24,6 +24,7 @@ const Datepicker = (props: IDatePicker) => {
     mainColor = '#2F8DB3',
     hideResetButton,
     alwaysOpened,
+    hideIcon
   } = props;
   const [selectedMonth, setSelectedMonth] = useState<number>(currentDate.month);
   const [selectedYear, setSelectedYear] = useState<number>(currentDate.year);
@@ -172,7 +173,7 @@ const Datepicker = (props: IDatePicker) => {
           <label style={{ color: value ? '#2E2E36' : '#7E7E7E' }}>
             {String(label)}
           </label>
-          <img src={calendarSvg} alt={'calendar'} />
+          {!hideIcon &&  <img src={calendarSvg} alt={'calendar'} />}
         </div>
       )}
       {visibleCalendar && (

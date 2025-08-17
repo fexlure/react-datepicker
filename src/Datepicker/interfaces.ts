@@ -18,6 +18,7 @@ export interface IDatePicker {
   mainColor?: string;
   alwaysOpened?: boolean;
   hideResetButton?: boolean;
+  hideIcon?: boolean;
 }
 
 export interface IYears {
