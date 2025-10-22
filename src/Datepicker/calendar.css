@@ -17,12 +17,27 @@
         width: 100%;
         display: flex;
         justify-content: space-between;
+        align-items: center;
         > label {
             cursor: pointer;
             font-size: 16px;
             font-style: normal;
             font-weight: 500;
             line-height: 24px;
+        }
+        > input.calendar-input {
+            background: transparent;
+            border: none;
+            outline: none;
+            width: 100%;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 24px;
+            color: #2E2E36;
+        }
+        > input.calendar-input.error {
+            border-bottom: 1px solid #E53E3E;
         }
     }
 }

@@ -9,12 +9,12 @@ export default defineConfig({
     ],
     build: {
         lib: {
-            entry: path.resolve(__dirname, 'src/index.ts'), // Точка входа
-            name: 'ReactDatePicker', // Имя библиотеки
+            entry: path.resolve(__dirname, 'src/index.ts'),
+            name: 'ReactDatePicker',
             fileName: function (format) { return "react-datepicker.".concat(format, ".js"); }, // Имя выходного файла
         },
         rollupOptions: {
-            external: ['react', 'react-dom'], // Внешние зависимости
+            external: ['react', 'react-dom'],
             output: {
                 globals: {
                     react: 'React',

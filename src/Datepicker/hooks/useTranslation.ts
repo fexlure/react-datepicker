@@ -7,15 +7,16 @@ export function useTranslation(lang: TLang) {
   const ruLangData: LangJSON = ru_lang;
   const enLangData: LangJSON = en_lang;
   const frLangData: LangJSON = fr_lang;
-  function t(value: string) {
+  function t(value: string): string {
     switch (lang) {
       case 'ru':
-        return ruLangData[value];
+        return ruLangData[value] ?? value;
       case 'en':
-        return enLangData[value];
+        return enLangData[value] ?? value;
       case 'fr':
-        return frLangData[value];
+        return frLangData[value] ?? value;
     }
+    return value;
   }
   return { t };
 }

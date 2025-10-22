@@ -19,6 +19,7 @@ export interface IDatePicker {
   alwaysOpened?: boolean;
   hideResetButton?: boolean;
   hideIcon?: boolean;
+  bg?: string
 }
 
 export interface IYears {

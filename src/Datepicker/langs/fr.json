@@ -30,5 +30,7 @@
   "Sep": "Sept",
   "Oct": "Oct",
   "Nov": "Nov",
-  "Dec": "Déc"
+  "Dec": "Déc",
+  "invalidDate": "Date invalide",
+  "outOfRange": "Date hors plage"
 }
