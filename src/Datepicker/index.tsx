@@ -24,7 +24,7 @@ const Datepicker = (props: IDatePicker) => {
     mainColor = '#2F8DB3',
     hideResetButton,
     alwaysOpened,
-    hideIcon,
+    customIcon,
     bg
   } = props;
   const [selectedMonth, setSelectedMonth] = useState<number>(currentDate.month);
@@ -55,23 +55,23 @@ const Datepicker = (props: IDatePicker) => {
   }, [selectedMonth, selectedYear]);
   const { t } = useTranslation(locale);
   // input label not used anymore due to manual input
-  const applyInput = () => {
-    const raw = String(inputValue || '').trim();
-    if (!raw) {
+  const applyRaw = (raw: string) => {
+    const clean = String(raw || '').trim();
+    if (!clean) {
       onChange(undefined);
-      return;
+      return false;
     }
-    const parsed = parseDateFromInput(showFormat, raw, type);
-    if (!parsed) {
-      return;
-    }
+    const parsed = parseDateFromInput(showFormat, clean, type);
+    if (!parsed) return false;
     const range = validateDateInRange(parsed, min, max);
-    if (!range.valid) {
-      return;
-    }
+    if (!range.valid) return false;
     onChange(parsed);
     setSelectedYear(parsed.getFullYear());
     setSelectedMonth(parsed.getMonth() + 1);
+    return true;
+  };
+  const applyInput = () => {
+    applyRaw(inputValue);
   };
   const changeVisible = () => {
     if (!alwaysOpened) {
@@ -200,6 +200,9 @@ const Datepicker = (props: IDatePicker) => {
             onChange={(e) => {
               const masked = formatInputByShowFormat(showFormat, e.target.value);
               setInputValue(masked);
+              if (masked.length === getMaskMaxLength(showFormat)) {
+                applyRaw(masked);
+              }
             }}
             onClick={(e) => e.stopPropagation()}
             onBlur={applyInput}
@@ -257,7 +260,7 @@ const Datepicker = (props: IDatePicker) => {
             maxLength={getMaskMaxLength(showFormat)}
             ref={inputRef}
           />
-          {!hideIcon &&  <img src={calendarSvg} alt={'calendar'} />}
+          {customIcon ? customIcon : <img src={calendarSvg} alt={'calendar'} />}
         </div>
       )}
       {visibleCalendar && (

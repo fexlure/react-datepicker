@@ -1,4 +1,4 @@
-import { CSSProperties, Dispatch, SetStateAction } from 'react';
+import { CSSProperties, Dispatch, ReactNode, SetStateAction } from 'react';
 
 export type TLang = 'en' | 'ru' | 'fr';
 type TCalendarType = 'full' | 'month';
@@ -18,7 +18,7 @@ export interface IDatePicker {
   mainColor?: string;
   alwaysOpened?: boolean;
   hideResetButton?: boolean;
-  hideIcon?: boolean;
+  customIcon?: ReactNode;
   bg?: string
 }
 
